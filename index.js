@@ -14,6 +14,11 @@ app.use(express.urlencoded({ limit: "50mb", extended: false }));
 
 //import routes
 const authRoute = require("./routes/auth");
+const commercialRoute = require("./routes/commercial");
+const humanRoute = require("./routes/human");
+const intellectualRoute = require("./routes/intellectual");
+const tortRoute = require("./routes/tort");
+const criminalRoute = require("./routes/criminal");
 const ct = require("./routes/ct");
 const hr = require("./routes/hr");
 const ip = require("./routes/ip");
@@ -33,6 +38,11 @@ mongoose.connect(uri, { useNewUrlParser: true }, () =>
 
 //route middlewares
 app.use("/api/user", authRoute);
+app.use("/api/commercial", commercialRoute);
+app.use("/api/human", humanRoute);
+app.use("/api/intellectual", intellectualRoute);
+app.use("/api/tort", tortRoute);
+app.use("/api/criminal", criminalRoute);
 app.use("/api/postCt", ct);
 app.use("/api/postCl", cl);
 app.use("/api/postHr", hr);
