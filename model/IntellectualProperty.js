@@ -11,6 +11,10 @@ const ipSchema = new mongoose.Schema({
     required: true,
     max: 255,
   },
+  imagePath: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,

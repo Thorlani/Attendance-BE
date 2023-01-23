@@ -10,10 +10,10 @@ const ctSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // imagePath: {
-    //     type: String,
-    //     required: true
-    // },
+    imagePath: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
