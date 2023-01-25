@@ -38,4 +38,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:profileId", async (req, res) => {
+  try {
+    const posts = await Commercial.findById(req.params.profileId);
+    res.json(posts);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
