@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser = require("body-parser");
 var cors = require("cors");
+const Tort = require("./model/LawOfTort");
 
 const PORT = process.env.PORT || 3005;
 

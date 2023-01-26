@@ -47,4 +47,22 @@ router.get("/:profileId", async (req, res) => {
   }
 });
 
+router.get("/find/:matric", async (req, res) => {
+  try {
+    const result = await Tort.find(
+      { matric: req.params.matric },
+      (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          return data;
+        }
+      }
+    );
+    res.json(result);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 module.exports = router;
