@@ -47,13 +47,14 @@ router.get("/:profileId", async (req, res) => {
   }
 });
 
-router.get("/find", async (req, res) => {
-  try {
-    const result = await Tort.find();
-    res.json(result);
-  } catch (error) {
-    res.status(400).send(error);
-  }
+router.get("/find/:matricNumber", async (req, res) => {
+  Tort.find({ matric: req.params.matricNumber }, function (error, data) {
+    if (error) {
+      return console.log(error);
+    } else {
+      res.json(data);
+    }
+  });
 });
 
 module.exports = router;
