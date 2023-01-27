@@ -48,7 +48,7 @@ router.get("/:profileId", async (req, res) => {
 });
 
 router.get("/find/:matricNumber", async (req, res) => {
-  Tort.find({ matric: req.params.matricNumber }, function (error, data) {
+  Intellectual.find({ matric: req.params.matricNumber }, function (error, data) {
     if (error) {
       return console.log(error);
     } else {
