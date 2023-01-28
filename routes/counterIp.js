@@ -13,15 +13,19 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/", async (req, res) => {
-  const post = new IpCounter({
-    number: req.body.number,
-  });
+router.patch("/:postId", async (req, res) => {
   try {
-    const count = await post.save();
-    res.send(count);
-  } catch (error) {
-    res.status(400).send(error);
+    const updated = IpCounter.updateOne(
+      { _id: req.params.postId },
+      {
+        $set: {
+          number: req.body.number,
+        },
+      }
+    );
+    res.json(updated);
+  } catch (err) {
+    res.json({ message: err });
   }
 });
 
