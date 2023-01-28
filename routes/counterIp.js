@@ -15,13 +15,9 @@ router.post("/", async (req, res) => {
 
 router.patch("/:postId", async (req, res) => {
   try {
-    const updated = IpCounter.updateOne(
+    const updated = await IpCounter.updateOne(
       { _id: req.params.postId },
-      {
-        $set: {
-          number: req.body.number,
-        },
-      }
+      { $set: { number: req.body.number } }
     );
     res.json(updated);
   } catch (err) {
