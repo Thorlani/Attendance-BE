@@ -31,6 +31,10 @@ const getHr = require("./routes/getHr");
 const getIp = require("./routes/getIp");
 const getLt = require("./routes/getLt");
 const counterIp = require("./routes/counterIp");
+const counterCt = require("./routes/counterCt");
+const counterCl = require("./routes/counterCl");
+const counterHr = require("./routes/counterHr");
+const counterLt = require("./routes/counterLt");
 
 const uri = process.env.DB_CONNECTION;
 
@@ -56,6 +60,10 @@ app.use("/api/getHr", getHr);
 app.use("/api/getCt", getCt);
 app.use("/api/getCl", getCl);
 app.use("/api/counterIp", counterIp);
+app.use("/api/counterCt", counterCt);
+app.use("/api/counterCl", counterCl);
+app.use("/api/counterLt", counterLt);
+app.use("/api/counterHr", counterHr);
 
 app.get("/", (req, res) => {
   res.send("My student attendance API");

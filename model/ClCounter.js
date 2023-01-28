@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const IpCount = new mongoose.Schema({
+const ClCount = new mongoose.Schema({
   number: {
     type: String,
     require: true,
@@ -12,4 +12,4 @@ const IpCount = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("IpCounter", IpCount);
+module.exports = mongoose.model("ClCounter", ClCount);
