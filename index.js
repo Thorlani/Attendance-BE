@@ -9,7 +9,12 @@ const Tort = require("./model/LawOfTort");
 const PORT = process.env.PORT || 3005;
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  })
+);
 app.use(bodyParser.json());
 app.use(express.urlencoded({ limit: "50mb", extended: false }));
 
